@@ -2297,16 +2297,6 @@ forward_scan:	do
 		}
 	} //}}}
 
-	//{{{ getWordPosition() method
-	/***
-	 * Returns a zero-based index of which word the caret is positioned on
-	 */
-	public int getWordPosition() {return wordPosition} //}}}
-	//{{{ getTotalWords() method
-	/***
-	 * Returns how many words are in the file
-	 */
-	public int getTotalWords() {return totalWords} //}}}
 	//{{{ getCaretPosition() method
 	/**
 	 * Returns a zero-based index of the caret position.
@@ -5281,8 +5271,6 @@ loop:		for(int i = lineNo - 1; i >= 0; i--)
 
 	protected int caret;
 	protected int caretLine;
-	protected int totalWords;
-	protected int wordPosition;
 	private int caretScreenLine;
 
 	private final java.util.List<StructureMatcher> structureMatchers;

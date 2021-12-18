@@ -262,8 +262,6 @@ public class StatusBarOptionPane extends AbstractOptionPane
 	private JCheckBox showCaretVirtual;
 	private JCheckBox showCaretOffset;
 	private JCheckBox showCaretBufferLength;
-	private JCheckBox showTotalWords;
-	private JCheckBox showWordOffset;
 	//}}}
 
 	//{{{ updateButtons() method

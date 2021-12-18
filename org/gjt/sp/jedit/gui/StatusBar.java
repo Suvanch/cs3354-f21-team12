@@ -335,8 +335,7 @@ public class StatusBar extends JPanel
 
 			int caretPosition = textArea.getCaretPosition();
 			int currLine = textArea.getCaretLine();
-			int totalWords = buffer.getWordCount();
-			int wordPosition = buffer.getWordCount();
+
 			// there must be a better way of fixing this...
 			// the problem is that this method can sometimes
 			// be called as a result of a text area scroll
@@ -398,28 +397,6 @@ public class StatusBar extends JPanel
 			{
 				buf.append('(');
 				buf.append(bufferLength);
-				buf.append(')');
-			}
-
-			if (jEdit.getBooleanProperty("view.status.show-word-offset", true) &&
-				jEdit.getBooleanProperty("view.status.show-total-words", true))
-			{
-				buf.append('(');
-				buf.append(wordPosition);
-				buf.append('/');
-				buf.append(totalWords);
-				buf.append(')');
-			}
-			else if (jEdit.getBooleanProperty("view.status.show-word-offset", true))
-			{
-				buf.append('(');
-				buf.append(wordPosition);
-				buf.append(')');
-			}
-			else if (jEdit.getBooleanProperty("view.status.show-total-words", true))
-			{
-				buf.append('(');
-				buf.append(totalWords);
 				buf.append(')');
 			}
 

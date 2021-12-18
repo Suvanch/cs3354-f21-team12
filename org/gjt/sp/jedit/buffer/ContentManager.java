@@ -132,22 +132,8 @@ class ContentManager
 		str.getChars(0,len,text,start);
 		gapStart += len;
 		length += len;
-		updateWordCount();
 	}
-	private void updateWordCount()
-	{
-		for (int i = 0; i < text.length; i++)
-		{
-			if (text[i] == ' ' || text[i] == '\n'|| text[i] == '\t')
-			{
-				wordCount++;
-			}
-		}
-	}
-	public int getWordCount()
-	{
-		return wordCount;
-	}
+
 	/**
 	 * Inserts the given data into the buffer.
 	 *
@@ -163,7 +149,6 @@ class ContentManager
 		}
 		gapStart += len;
 		length += len;
-		updateWordCount();
 	}
 
 	public void insert(int start, Segment seg)
@@ -172,7 +157,6 @@ class ContentManager
 		System.arraycopy(seg.array,seg.offset,text,start,seg.count);
 		gapStart += seg.count;
 		length += seg.count;
-		updateWordCount();
 	} //}}}
 
 	//{{{ _setContent() method
@@ -190,7 +174,6 @@ class ContentManager
 	{
 		moveGapStart(start);
 		length -= len;
-		updateWordCount();
 	} //}}}
 
 	//{{{ Private members
@@ -198,7 +181,6 @@ class ContentManager
 	private char[] text = EMPTY_TEXT;
 	private int gapStart;
 	private int length;
-	private int wordCount;
 
 	//{{{ gapEnd() method
 	private int gapEnd()
